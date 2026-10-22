@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+html,
+body,
+#root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background: #020617;
+  overflow: hidden;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+canvas {
+  display: block;
+  outline: none;
+}
+
+/* hit marker pop */
+.hitmarker {
+  animation: hit-pop 0.28s ease-out forwards;
+}
+
+@keyframes hit-pop {
+  from {
+    opacity: 1;
+    transform: scale(1.35);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+/* red flash when taking damage */
+.damage-flash {
+  background: radial-gradient(ellipse at center, rgba(239, 68, 68, 0) 40%, rgba(239, 68, 68, 0.6) 100%);
+  animation: damage-fade 0.6s ease-out forwards;
+}
+
+@keyframes damage-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* kill feed entries */
+.feed-item {
+  animation: feed-in 0.25s ease-out;
+}
+
+@keyframes feed-in {
+  from {
+    opacity: 0;
+    transform: translateY(-8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
